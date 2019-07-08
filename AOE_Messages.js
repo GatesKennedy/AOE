@@ -1,9 +1,10 @@
-var url = 'http://someLoggingService.io/log';
 
-function log(message){
-    // Send an HTTP request
-    console.log(message);
-}
+const Logger = require('./AOE_Util/logger');
+const logger = new Logger();
 
-module.exports.log = log;
-module.exports.endpoint = url;
+//  Register a listener
+logger.on('Logger Message: ', (arg) => {
+    console.log('Listener Called', arg);
+});
+
+logger.log('test message for logger.log()');
