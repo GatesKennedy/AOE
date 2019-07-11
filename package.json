@@ -2,7 +2,7 @@
   "name": "aoe",
   "version": "1.0.0",
   "description": "This is The All of Everything",
-  "main": "AOE_Hello.js",
+  "main": "AOE_Route.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
