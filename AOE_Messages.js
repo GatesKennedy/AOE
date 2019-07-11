@@ -1,3 +1,7 @@
+/*==============
+    DEPENDS
+==============*/
+var _ = require('underscore');
 
 const Logger = require('./AOE_Util/logger');
 const logger = new Logger();

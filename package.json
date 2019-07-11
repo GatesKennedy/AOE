@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/GatesKennedy/AOE#readme",
   "dependencies": {
-    "underscore": "^1.9.1"
+    "express": "^4.17.1",
+    "mongoose": "^5.6.4",
+    "underscore": "^1.9.1",
+    "validator": "^11.1.0"
   }
 }
