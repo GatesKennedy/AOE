@@ -1,0 +1,1 @@
+const db = 'mongodb+srv://GatesKennedy:<password>@allofeverything-97hx1.mongodb.net/test?retryWrites=true&w=majority';

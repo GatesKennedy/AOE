@@ -14,6 +14,7 @@ const courses = [{
     },
     {
         id: 2,
+        
         name: 'course2'
     },
     {
