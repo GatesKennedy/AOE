@@ -1,7 +1,19 @@
 const express = require('express');
+const connectDB = require('./config/db');
 const mongoose = require('mongoose');
+
 //  initialize aoe variable
 const aoe = express();
+//  Connect Database
+connectDB();
+
+//  Define Routes
+aoe.use('/api/auth', require('./AOE_Util/api/auth'));
+aoe.use('/api/posts', require('./AOE_Util/api/posts'));
+aoe.use('/api/profile', require('./AOE_Util/api/profile'));
+aoe.use('/api/users', require('./AOE_Util/api/users'));
+
+
 //  initialze environment variable || default value = 5000
 const PORT = process.env.PORT || 5000;
 //  callback: console.log for connection
