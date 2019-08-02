@@ -1,3 +1,4 @@
 {
-    "mongoURI": "mongodb+srv://GatesKennedy:1Knowexactlywhatgoeson!@allofeverything-97hx1.mongodb.net/test?retryWrites=true&w=majority"
+    "mongoURI": "mongodb+srv://GatesKennedy:1Knowexactlywhatgoeson!@allofeverything-97hx1.mongodb.net/test?retryWrites=true&w=majority",
+    "jwtSecret": "someBigSecret"
 }
