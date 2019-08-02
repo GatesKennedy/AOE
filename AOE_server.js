@@ -21,7 +21,7 @@ aoe.use('/api/users', require('./AOE_Util/api/users'));
 //  initialze environment variable || default value = 5000
 const PORT = process.env.PORT || 5000;
 //  callback: console.log for connection
-aoe.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+aoe.listen(PORT, () => console.log(`MSG: Server started on port ${PORT}`));
 
 //  Input Validation 
 const valid = require('validator');
