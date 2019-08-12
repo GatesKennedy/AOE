@@ -17,6 +17,7 @@ aoe.use('/api/auth', require('./AOE_Util/api/auth'));
 aoe.use('/api/posts', require('./AOE_Util/api/posts'));
 aoe.use('/api/profile', require('./AOE_Util/api/profile'));
 aoe.use('/api/users', require('./AOE_Util/api/users'));
+aoe.use('/api/Open', require('./AOE_Util/api/open'));
 
 //  initialze environment variable || default value = 5000
 const PORT = process.env.PORT || 5000;
@@ -50,11 +51,6 @@ aoe.get('/ctrl', (req, res) => {
 //  Open
 aoe.get('/open', (req, res) => {
     res.send('AOE_Open.js');
-});
-
-//  Talk
-aoe.get('/', (req, res) => {
-    res.send('AOE_Talk.js');
 });
 
 //================

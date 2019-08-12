@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
+//  ~ Schema ~
 const AccountSchema = new mongoose.Schema({
-    //      Back
-    //  =============
+    //  === Back ===
     userPref: {
         appList: {
             type: [String],
@@ -20,8 +20,7 @@ const AccountSchema = new mongoose.Schema({
             type: [String]
         }
     },
-    //      Front
-    //  =============
+    //  === Front ===
     userPers: {
         bio: {
             type: String
