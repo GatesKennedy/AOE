@@ -16,7 +16,8 @@ aoe.use(express.json({
 aoe.use('/api/auth', require('./AOE_Util/api/auth'));
 aoe.use('/api/profile', require('./AOE_Util/api/profile'));
 aoe.use('/api/users', require('./AOE_Util/api/users'));
-aoe.use('/api/Open', require('./AOE_Util/api/open'));
+aoe.use('/api/posts', require('./AOE_Util/api/posts'));
+aoe.use('/api/open', require('./AOE_Util/api/open'));
 
 //  initialze environment variable || default value = 5000
 const PORT = process.env.PORT || 5000;
