@@ -1,4 +1,6 @@
 {
     "mongoURI": "mongodb+srv://GatesKennedy:1Knowexactlywhatgoeson!@allofeverything-97hx1.mongodb.net/test?retryWrites=true&w=majority",
-    "jwtSecret": "someBigSecret"
+    "jwtSecret": "someBigSecret",
+    "githubClientId": "63b021759d2dad189f17",
+    "githubSecret": "fd9f06389e282c17e0ca33e9ef4ff4ab7be98fef"
 }
