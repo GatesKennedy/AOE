@@ -6,15 +6,14 @@ const AccountSchema = new Schema({
     //  === Back ===
     userPref: {
         appList: [{
-            name: {
-                type: String,
-                required: true
-            },
             appId: {
                 type: Schema.Types.ObjectId,
                 ref: 'apps'
+            },
+            status: {
+                type: Boolean,
+                default: true
             }
-
         }],
         dateSignup: {
             type: Date,
