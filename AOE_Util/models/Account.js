@@ -1,13 +1,21 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 //  ~ Schema ~
-const AccountSchema = new mongoose.Schema({
+const AccountSchema = new Schema({
     //  === Back ===
     userPref: {
-        appList: {
-            type: [String],
-            required: true
-        },
+        appList: [{
+            name: {
+                type: String,
+                required: true
+            },
+            appId: {
+                type: Schema.Types.ObjectId,
+                ref: 'apps'
+            }
+
+        }],
         dateSignup: {
             type: Date,
             required: true
