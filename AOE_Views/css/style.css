@@ -1,0 +1,19 @@
+body {
+    background-color: #efefef;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+/*  ========
+      navi
+    ========
+*/
+.navi {
+    background-color: #fff;
+    font-size: 27pt;
+    color: #101010;
+    padding: 10px;
+    margin-top: 20px;
+    display: inline-block;
+    position: sticky;
+    align-content: center;
+}
