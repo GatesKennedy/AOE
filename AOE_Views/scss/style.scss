@@ -1,5 +1,59 @@
-$primary-color: gray;
+@import 'config';
+
+// === core ===
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 body {
-  background: $primary-color;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  background-color: $white-2;
+  color: $black-1;
+}
+
+a {
+  text-decoration: none;
+  color: $black-2;
+}
+
+ul {
+  list-style: none;
+  display: inline-flex;
+}
+
+img {
+  width: 100%;
+}
+
+// === navi ===
+.navi {
+  display: flex;
+  justify-content: space-between;
+  background-color: $white-3;
+}
+
+.navi .menu {
+  margin: 0.7rem;
+}
+
+.navi .center ul {
+  margin: 0.7rem;
+  width: 50vw;
+  justify-content: space-evenly;
+}
+
+.navi li {
+  background-color: $black-2;
+  width: 3rem;
+  display: inline-flex;
+  justify-content: center;
+}
+
+.navi .center a {
+  color: $white-2;
 }
