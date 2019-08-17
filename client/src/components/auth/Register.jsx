@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import { Link } from 'react-router-dom';
 
 const Register = () => {
-  return <div>Register</div>;
+  return <Fragment>Register</Fragment>;
 };
 
 export default Register;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
@@ -13,6 +13,14 @@ const Navbar = () => {
         </li>
         <li>
           <Link to='/open'>they</Link>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <Link to='/Login'>login</Link>
+        </li>
+        <li>
+          <Link to='/Register'>register</Link>
         </li>
       </ul>
     </nav>
