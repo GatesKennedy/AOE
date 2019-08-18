@@ -1,6 +1,6 @@
 body {
-    background-color: #ffffff;
-    font-family: Helvetica, Arial, sans-serif;
+  background-color: #ffffff;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 /*  =======
@@ -9,27 +9,27 @@ body {
 */
 
 .wht1 {
-    background-color: #f7f7f7;
-    color: #0d0d0d;
-    font-size: 12pt;
+  background-color: #f7f7f7;
+  color: #0d0d0d;
+  font-size: 12pt;
 }
 
 .wht2 {
-    background-color: #f7f7f7;
-    color: #0d0d0d;
-    font-size: 12pt;
+  background-color: #f7f7f7;
+  color: #0d0d0d;
+  font-size: 12pt;
 }
 
 .blk1 {
-    background-color: #0d0d0d;
-    color: #f7f7f7;
-    font-size: 18pt;
+  background-color: #0d0d0d;
+  color: #f7f7f7;
+  font-size: 18pt;
 }
 
 .blk2 {
-    background-color: #0d0d0d;
-    color: #f7f7f7;
-    font-size: 18pt;
+  background-color: #0d0d0d;
+  color: #f7f7f7;
+  font-size: 18pt;
 }
 
 /*  ======== 
@@ -37,36 +37,36 @@ body {
     ========
 */
 .horz {
-    display: inline-block;
-    margin: auto;
-    padding: 10px 20px;
-    list-style-type: none;
+  display: inline-block;
+  margin: auto;
+  padding: 10px 20px;
+  list-style-type: none;
 }
 
 .navi {
-    font-size: 18pt;
-    color: #101010;
-    padding: 10px 0px;
-    margin: auto;
-    width: 50%;
-    position: sticky;
+  font-size: 18pt;
+  color: #101010;
+  padding: 10px 0px;
+  margin: auto;
+  width: 50%;
+  position: sticky;
 }
 
 ul {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 li a.active {
-    background-color: #2d2d2d;
+  background-color: #2d2d2d;
 }
 
 li a:hover:not(.active) {
-    background-color: #2d2d2d;
-    color: #f7f7f7;
+  background-color: #2d2d2d;
+  color: #f7f7f7;
 }
 
 a {
-    display: block;
+  display: block;
 }
 
 /*  ======
@@ -75,19 +75,19 @@ a {
 */
 
 .shade-left {
-    -webkit-box-shadow: -38px -40px 57px -28px rgba(102, 102, 102, 1);
-    -moz-box-shadow: -38px -40px 57px -28px rgba(102, 102, 102, 1);
-    box-shadow: -38px -40px 57px -28px rgba(102, 102, 102, 1);
+  -webkit-box-shadow: -38px -40px 57px -28px rgba(102, 102, 102, 1);
+  -moz-box-shadow: -38px -40px 57px -28px rgba(102, 102, 102, 1);
+  box-shadow: -38px -40px 57px -28px rgba(102, 102, 102, 1);
 }
 
 .shade-mid {
-    -webkit-box-shadow: 0px -40px 57px -28px rgba(102, 102, 102, 1);
-    -moz-box-shadow: 0px -40px 57px -28px rgba(102, 102, 102, 1);
-    box-shadow: 0px -40px 57px -28px rgba(102, 102, 102, 1);
+  -webkit-box-shadow: 0px -40px 57px -28px rgba(102, 102, 102, 1);
+  -moz-box-shadow: 0px -40px 57px -28px rgba(102, 102, 102, 1);
+  box-shadow: 0px -40px 57px -28px rgba(102, 102, 102, 1);
 }
 
 .shade-right {
-    -webkit-box-shadow: 39px -40px 57px -28px rgba(102, 102, 102, 1);
-    -moz-box-shadow: 39px -40px 57px -28px rgba(102, 102, 102, 1);
-    box-shadow: 39px -40px 57px -28px rgba(102, 102, 102, 1);
+  -webkit-box-shadow: 39px -40px 57px -28px rgba(102, 102, 102, 1);
+  -moz-box-shadow: 39px -40px 57px -28px rgba(102, 102, 102, 1);
+  box-shadow: 39px -40px 57px -28px rgba(102, 102, 102, 1);
 }
