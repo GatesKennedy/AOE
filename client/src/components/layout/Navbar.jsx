@@ -5,21 +5,21 @@ const Navbar = () => {
   return (
     <nav className='navi bg-dark'>
       <div className='menu'>
-        <a href='aoe.html'>
+        <Link to='/'>
           {' '}
           <i className='fas fa-infinity' />
-        </a>
+        </Link>
       </div>
       <div className='center'>
         <ul>
           <li>
-            <a href='dash.hmtl'>dash</a>
+            <Link to='/dash'>dash</Link>
           </li>
           <li>
-            <a href='ctrl.hmtl'>ctrl</a>
+            <Link to='/ctrl'>ctrl</Link>
           </li>
           <li>
-            <a href='open.hmtl'>open</a>
+            <Link to='/open'>open</Link>
           </li>
         </ul>
       </div>
