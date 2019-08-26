@@ -1,5 +1,7 @@
 import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
+import MenuAOE from './MenuAOE';
+import MenuMore from './MenuMore';
 
 const Navbar = () => {
   return (

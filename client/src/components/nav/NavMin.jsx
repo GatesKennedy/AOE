@@ -1,4 +1,6 @@
 import React from 'react';
+import MenuAOE from './MenuAOE';
+import MenuMore from './MenuMore';
 
 const NavMin = () => {
   return (

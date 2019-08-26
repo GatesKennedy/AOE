@@ -1,8 +1,10 @@
 import React, { Fragment } from 'react';
+import NavStd from '../nav/NavStd';
 
 const Open = () => {
   return (
     <Fragment>
+      <NavStd />
       <section class='dash group'>
         <div>
           <h4 class='group-name'>
