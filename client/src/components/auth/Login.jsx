@@ -1,5 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+import NavMin from '../nav/NavMin';
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -18,11 +20,13 @@ const Login = () => {
       console.log('MSG: password confirmation failed');
     } else {
       console.log(formData);
+      console.log('hello again..');
     }
   };
 
   return (
     <Fragment>
+      <NavMin />
       <section className='theme dark hello center'>
         <div className='greeting center'>
           <h2 className='msg center'>welcome back, Friend</h2>
@@ -50,11 +54,20 @@ const Login = () => {
               />
             </li>
             <li className='center options'>
-              <input type='submit' value='login' className='btn submit light' />
+              <input
+                type='submit'
+                value='submit'
+                className='btn submit light'
+              />
             </li>
           </ul>
         </form>
       </section>
+      <p className='center options'>
+        <Link to='/join'>
+          <button className='btn light'>join?</button>
+        </Link>
+      </p>
     </Fragment>
   );
 };
