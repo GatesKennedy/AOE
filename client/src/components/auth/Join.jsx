@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import NavMin from '../nav/NavMin';
 
 const Join = () => {
   return (
