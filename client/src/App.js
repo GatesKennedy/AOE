@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Hello from './components/layout/Hello';
-import Register from './components/auth/Register';
+import Join from './components/auth/Join';
 import Login from './components/auth/Login';
 import Dash from './components/layout/Dash';
 import Ctrl from './components/layout/Ctrl';
@@ -16,7 +16,7 @@ const App = () => (
       <Route exact path='/' component={Hello} />
       <section className='container'>
         <Switch>
-          <Route exact path='/register' component={Register} />
+          <Route exact path='/register' component={Join} />
           <Route exact path='/login' component={Login} />
         </Switch>
       </section>
