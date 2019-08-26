@@ -5,31 +5,31 @@ import MenuMore from './MenuMore';
 
 const Navbar = () => {
   return (
-    <nav className='navi bg-dark'>
-      <div className='menu'>
-        <Link to='/'>
+    <nav className='navi light'>
+      <div className='center menu'>
+        <Link to='/' id='menuAOE' className='center'>
           {' '}
           <i className='fas fa-infinity' />
         </Link>
       </div>
-      <div className='center'>
+      <div className='center menu'>
         <ul>
-          <li>
-            <Link to='/dash'>dash</Link>
-          </li>
-          <li>
-            <Link to='/ctrl'>ctrl</Link>
-          </li>
-          <li>
-            <Link to='/open'>open</Link>
-          </li>
+          <Link to='/dash'>
+            <li className='btn dark'>dash</li>
+          </Link>
+          <Link to='/ctrl'>
+            <li className='btn dark'>ctrl</li>
+          </Link>
+          <Link to='/open'>
+            <li className='btn dark'>open</li>
+          </Link>
         </ul>
       </div>
-      <div className='menu'>
-        <a href='curious.html'>
+      <div className='center menu'>
+        <Link to='/' className=''>
           {' '}
           <i className='fas fa-wave-square' />
-        </a>
+        </Link>
       </div>
     </nav>
   );

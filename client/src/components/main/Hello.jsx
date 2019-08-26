@@ -13,12 +13,12 @@ const Hello = () => {
         </div>
         <div className='options center'>
           <ul>
-            <li>
-              <button>login</button>
-            </li>
-            <li>
-              <button>join</button>
-            </li>
+            <Link to='/login'>
+              <li className='btn light'>login</li>
+            </Link>
+            <Link to='/join'>
+              <li className='btn light'>join</li>
+            </Link>
           </ul>
         </div>
       </section>
