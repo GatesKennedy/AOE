@@ -1,13 +1,14 @@
 import React, { Fragment } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import './App.css';
 import Navbar from './components/layout/Navbar';
+import Navmin from './components/layout/NavMin';
 import Hello from './components/layout/Hello';
-import Join from './components/auth/Join';
-import Login from './components/auth/Login';
 import Dash from './components/layout/Dash';
 import Ctrl from './components/layout/Ctrl';
 import Open from './components/layout/Open';
-import './App.css';
+import Join from './components/auth/Join';
+import Login from './components/auth/Login';
 
 const App = () => (
   <Router>
