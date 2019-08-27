@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { setAlert } from '../../actions/axn_alert';
+import { setAlert } from '../../Rdx_actions/axn_alert';
 import NavMin from '../nav/NavMin';
 import PropTypes from 'prop-types';
 //  import axios from 'axios';
