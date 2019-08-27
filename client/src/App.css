@@ -130,3 +130,12 @@ input {
 #menuAOE {
   margin-top: 0.4rem;
 }
+
+.alert {
+  padding-left: 1rem;
+}
+
+.alert-warn {
+  background-color: #ac3e3e;
+  color: #fff;
+}

@@ -7,6 +7,7 @@ import Ctrl from './components/main/Ctrl';
 import Open from './components/main/Open';
 import Join from './components/auth/Join';
 import Login from './components/auth/Login';
+import Alert from './components/warn/Alert';
 // === REDUX ===
 import { Provider } from 'react-redux';
 import store from './store';
@@ -19,6 +20,7 @@ const App = () => (
       <Fragment>
         <Route exact path='/' component={Hello} />
         <section className='container'>
+          <Alert />
           <Switch>
             <Route exact path='/join' component={Join} />
             <Route exact path='/login' component={Login} />

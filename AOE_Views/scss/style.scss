@@ -118,6 +118,7 @@ input {
   color: $white-2;
 }
 
+// ============
 // === dash ===
 .dash {
   margin-left: 0.4rem;
@@ -132,10 +133,32 @@ input {
   background-color: $white-3;
 }
 
+// =============
 // === hello ===
 .hello {
   display: grid;
 }
 .greeting {
   color: $white-2;
+}
+
+// ==============
+// === alerts ===
+.alert {
+  padding-left: 1rem;
+}
+
+.alert-warn {
+  background-color: #ac3e3e;
+  color: #fff;
+}
+
+.alert-good {
+  background-color: $good-1;
+  color: #fff;
+}
+
+.alert-note {
+  background-color: $note-1;
+  color: $white-3;
 }

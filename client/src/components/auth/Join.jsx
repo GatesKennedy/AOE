@@ -1,9 +1,14 @@
 import React, { Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { setAlert } from '../../actions/axn_alert';
 import NavMin from '../nav/NavMin';
-import axios from 'axios';
+import PropTypes from 'prop-types';
+//  import axios from 'axios';
 
-const Join = () => {
+//  destructure props.setAlert
+//  const Join = props => {
+const Join = ({ setAlert }) => {
   const [formData, setFormData] = useState({
     username: '',
     email: '',
@@ -18,7 +23,8 @@ const Join = () => {
   const onSubmit = async e => {
     e.preventDefault();
     if (password !== pwConfirm) {
-      console.log('MSG: password confirmation failed');
+      // destructured props.setAlert
+      setAlert("oh no... passwords don't match", 'warn');
     } else {
       console.log(formData);
       console.log('welcome..');
@@ -111,4 +117,12 @@ const Join = () => {
   );
 };
 
-export default Join;
+Join.propTypes = {
+  setAlert: PropTypes.func.isRequired
+};
+
+//  Connect Actions (state, {axn,..}) to Component (Join) to REDUX
+export default connect(
+  null,
+  { setAlert }
+)(Join);
