@@ -1,14 +1,18 @@
+//  React
 import React, { Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { setAlert } from '../../Rdx_actions/axn_alert';
 import NavMin from '../nav/NavMin';
 import PropTypes from 'prop-types';
+//  REDUX
+import { connect } from 'react-redux';
+import { setAlert } from '../../Rdx_actions/axn_alert';
+import { register } from '../../Rdx_actions/axn_auth';
+
 //  import axios from 'axios';
 
 //  destructure props.setAlert
 //  const Join = props => {
-const Join = ({ setAlert }) => {
+const Register = ({ setAlert, register }) => {
   const [formData, setFormData] = useState({
     username: '',
     email: '',
@@ -26,29 +30,28 @@ const Join = ({ setAlert }) => {
       // destructured props.setAlert
       setAlert("oh no... passwords don't match", 'warn');
     } else {
-      console.log(formData);
-      console.log('welcome..');
-
-      //=== Handled by REDUX ===
-      // const newUser = {
-      //   username,
-      //   email,
-      //   password
-      // };
-      // try {
-      //   const config = {
-      //     headers: {
-      //       'Content-Type': 'application/json'
-      //     }
-      //   };
-      //   const body = JSON.stringify(newUser);
-      //   const res = await axios.post('/api/users', body, config);
-      //   console.log(res.data);
-      // } catch (err) {
-      //   console.error(err.response.data);
-      // }
+      register({ username, email, password });
     }
   };
+
+  //=== Handled by REDUX ===
+  // const newUser = {
+  //   username,
+  //   email,
+  //   password
+  // };
+  // try {
+  //   const config = {
+  //     headers: {
+  //       'Content-Type': 'application/json'
+  //     }
+  //   };
+  //   const body = JSON.stringify(newUser);
+  //   const res = await axios.post('/api/users', body, config);
+  //   console.log(res.data);
+  // } catch (err) {
+  //   console.error(err.response.data);
+  // }
 
   return (
     <Fragment>
@@ -58,54 +61,51 @@ const Join = ({ setAlert }) => {
           <h2 className='msg center'>glad You could make it</h2>
         </div>
         <form className='form-auth center' onSubmit={e => onSubmit(e)}>
-          <ul className='column'>
-            <li>
+          <div className='column'>
+            <div className='form-group'>
               <input
                 name='username'
                 type='text'
                 value={username}
-                onChange={e => onChange(e)}
                 placeholder='username'
                 className='center input'
-                required
+                onChange={e => onChange(e)}
               />
-            </li>
-            <li>
+            </div>
+            <div className='form-group'>
               <input
                 name='email'
                 type='email'
                 value={email}
-                onChange={e => onChange(e)}
                 placeholder='email'
                 className='center input'
+                onChange={e => onChange(e)}
               />
-            </li>
-            <li>
+            </div>
+            <div className='form-group'>
               <input
                 name='password'
                 type='password'
                 value={password}
-                onChange={e => onChange(e)}
                 placeholder='password'
                 className='center input'
-                minLength='6'
+                onChange={e => onChange(e)}
               />
-            </li>
-            <li>
+            </div>
+            <div className='form-group'>
               <input
                 name='pwConfirm'
                 type='password'
                 value={pwConfirm}
-                onChange={e => onChange(e)}
                 placeholder='...confirm'
                 className='center input'
-                minLength='6'
+                onChange={e => onChange(e)}
               />
-            </li>
-            <li className='center options'>
+            </div>
+            <div className='center options'>
               <input type='submit' className='btn light' value='submit' />
-            </li>
-          </ul>
+            </div>
+          </div>
         </form>
       </section>
       <p className='center options'>
@@ -117,12 +117,14 @@ const Join = ({ setAlert }) => {
   );
 };
 
-Join.propTypes = {
-  setAlert: PropTypes.func.isRequired
+Register.propTypes = {
+  // prop     snip: <ptfr> 'func prop type required'
+  setAlert: PropTypes.func.isRequired,
+  register: PropTypes.func.isRequired
 };
 
-//  Connect Actions (state, {axn,..}) to Component (Join) to REDUX
+//  Connect Actions (state, {axn,..}) to Component (Register) to REDUX
 export default connect(
   null,
-  { setAlert }
-)(Join);
+  { setAlert, register }
+)(Register);

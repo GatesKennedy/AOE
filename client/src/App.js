@@ -5,7 +5,7 @@ import Hello from './components/main/Hello';
 import Dash from './components/main/Dash';
 import Ctrl from './components/main/Ctrl';
 import Open from './components/main/Open';
-import Join from './components/auth/Join';
+import Register from './components/auth/Register';
 import Login from './components/auth/Login';
 import Alert from './components/warn/Alert';
 // === REDUX ===
@@ -22,7 +22,7 @@ const App = () => (
         <section className='container'>
           <Alert />
           <Switch>
-            <Route exact path='/join' component={Join} />
+            <Route exact path='/register' component={Register} />
             <Route exact path='/login' component={Login} />
           </Switch>
         </section>
