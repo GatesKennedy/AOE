@@ -1,6 +1,6 @@
 //  React
 import React, { Fragment, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import NavMin from '../nav/NavMin';
 import PropTypes from 'prop-types';
 //  REDUX
@@ -12,7 +12,7 @@ import { register } from '../../Rdx_actions/axn_auth';
 
 //  destructure props.setAlert
 //  const Join = props => {
-const Register = ({ setAlert, register }) => {
+const Register = ({ setAlert, register, isAuthenticated }) => {
   const [formData, setFormData] = useState({
     username: '',
     email: '',
@@ -52,6 +52,11 @@ const Register = ({ setAlert, register }) => {
   // } catch (err) {
   //   console.error(err.response.data);
   // }
+
+  //  Redirect if User Authenticated
+  if (isAuthenticated) {
+    return <Redirect to='/dash' />;
+  }
 
   return (
     <Fragment>
@@ -124,11 +129,16 @@ const Register = ({ setAlert, register }) => {
 Register.propTypes = {
   // prop     snip: <ptfr> 'func prop type required'
   setAlert: PropTypes.func.isRequired,
-  register: PropTypes.func.isRequired
+  register: PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool
 };
+
+const mapStateToProps = state => ({
+  isAuthenticated: state.auth.isAuthenticated
+});
 
 //  Connect Actions (state, {axn,..}) to Component (Register) to REDUX
 export default connect(
-  null,
+  mapStateToProps,
   { setAlert, register }
 )(Register);

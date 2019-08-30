@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import NavMin from '../nav/NavMin';
 //  REDUX
 import { connect } from 'react-redux';
@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 import { login } from '../../Rdx_actions/axn_auth';
 //  import axios from 'axios';
 
-const Login = ({ login }) => {
+const Login = ({ login, isAuthenticated }) => {
   const [formData, setFormData] = useState({
     username: '',
     password: ''
@@ -30,6 +30,11 @@ const Login = ({ login }) => {
     //   console.log('hello again..');
     // }
   };
+
+  //  Redirect if User Authenticated
+  if (isAuthenticated) {
+    return <Redirect to='/dash' />;
+  }
 
   return (
     <Fragment>
@@ -77,11 +82,16 @@ const Login = ({ login }) => {
 
 Login.propTypes = {
   // prop:  snip= <ptfr> 'func prop type required'
-  login: PropTypes.func.isRequired
+  login: PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool
 };
+
+const mapStateToProps = state => ({
+  isAuthenticated: state.auth.isAuthenticated
+});
 
 //  Connect Actions (state, {axn,..}) to Component (Register) to REDUX
 export default connect(
-  null,
+  mapStateToProps,
   { login }
 )(Login);
