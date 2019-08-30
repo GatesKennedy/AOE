@@ -16,7 +16,7 @@ const Hello = () => {
             <Link to='/login'>
               <li className='btn light'>login</li>
             </Link>
-            <Link to='/join'>
+            <Link to='/register'>
               <li className='btn light'>join</li>
             </Link>
           </ul>
