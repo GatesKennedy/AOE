@@ -8,14 +8,16 @@ const aoe = express();
 connectDB();
 
 //  Init Middleware
-aoe.use(express.json({
+aoe.use(
+  express.json({
     extended: false
-}));
+  })
+);
 
 //  Define Routes
 
 aoe.use('/api/auth', require('./AOE_Util/api/auth'));
-aoe.use('/api/profile', require('./AOE_Util/api/profile'));
+aoe.use('/api/self', require('./AOE_Util/api/self'));
 aoe.use('/api/users', require('./AOE_Util/api/users'));
 aoe.use('/api/posts', require('./AOE_Util/api/posts'));
 aoe.use('/api/open', require('./AOE_Util/api/open'));
@@ -25,7 +27,7 @@ const PORT = process.env.PORT || 5000;
 //  callback: console.log for connection
 aoe.listen(PORT, () => console.log(`MSG: Server started on port ${PORT}`));
 
-//  Input Validation 
+//  Input Validation
 const valid = require('validator');
 //  Tools
 const _ = require('underscore');
@@ -36,22 +38,22 @@ const _ = require('underscore');
 
 //  Hello
 aoe.get('/', (req, res) => {
-    res.send('AOE_Hello.js');
+  res.send('AOE_Hello.js');
 });
 
 //  Dash
 aoe.get('/dash', (req, res) => {
-    res.send('AOE_Dash.js');
+  res.send('AOE_Dash.js');
 });
 
 //  Ctrl
 aoe.get('/ctrl', (req, res) => {
-    res.send('AOE_Ctrl.js');
+  res.send('AOE_Ctrl.js');
 });
 
 //  Open
 aoe.get('/open', (req, res) => {
-    res.send('AOE_Open.js');
+  res.send('AOE_Open.js');
 });
 
 //================

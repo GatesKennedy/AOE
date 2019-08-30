@@ -40,6 +40,7 @@ export default function(state = initialState, action) {
     case LOGIN_FAIL:
     case LOGOUT:
       localStorage.removeItem('token');
+      console.log('rdc_auth.js: LOGIN_FAIL');
       return {
         ...state,
         token: null,

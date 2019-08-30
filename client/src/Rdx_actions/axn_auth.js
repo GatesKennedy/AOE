@@ -85,10 +85,11 @@ export const login = ({ username, password }) => async dispatch => {
   } catch (err) {
     const errors = err.response.data.errors;
     console.log('axn_auth.js FAIL');
+    console.log(errors);
     if (errors) {
       errors.forEach(error => dispatch(setAlert(error.msg, 'warn')));
     }
-
+    console.log('no Errors..');
     dispatch({
       type: LOGIN_FAIL
     });

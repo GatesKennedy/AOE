@@ -1,7 +1,14 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { getCurrentSelf } from '../../Rdx_actions/axn_self';
 import NavStd from '../nav/NavStd';
 
-const Ctrl = () => {
+const Ctrl = ({ getCurrentSelf, auth, self }) => {
+  useEffect(() => {
+    getCurrentSelf();
+  }, []);
+
   return (
     <Fragment>
       <NavStd />
@@ -15,4 +22,18 @@ const Ctrl = () => {
   );
 };
 
-export default Ctrl;
+Ctrl.propTypes = {
+  getCurrentSelf: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired,
+  self: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
+  auth: state.auth,
+  self: state.self
+});
+
+export default connect(
+  mapStateToProps,
+  { getCurrentSelf }
+)(Ctrl);

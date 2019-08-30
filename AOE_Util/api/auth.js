@@ -79,7 +79,7 @@ router.post(
           ]
         });
       }
-
+      console.log('auth.js: line 82');
       //  Return jsonWebToken
       const payload = {
         user: {
