@@ -61,8 +61,8 @@ const Register = ({ setAlert, register }) => {
           <h2 className='msg center'>glad You could make it</h2>
         </div>
         <form className='form-auth center' onSubmit={e => onSubmit(e)}>
-          <div className='column'>
-            <div className='form-group'>
+          <div className='column form-group'>
+            <div className='form-field'>
               <input
                 name='username'
                 type='text'
@@ -72,7 +72,7 @@ const Register = ({ setAlert, register }) => {
                 onChange={e => onChange(e)}
               />
             </div>
-            <div className='form-group'>
+            <div className='form-field'>
               <input
                 name='email'
                 type='email'
@@ -82,7 +82,7 @@ const Register = ({ setAlert, register }) => {
                 onChange={e => onChange(e)}
               />
             </div>
-            <div className='form-group'>
+            <div className='form-field'>
               <input
                 name='password'
                 type='password'
@@ -92,7 +92,7 @@ const Register = ({ setAlert, register }) => {
                 onChange={e => onChange(e)}
               />
             </div>
-            <div className='form-group'>
+            <div className='form-field'>
               <input
                 name='pwConfirm'
                 type='password'
@@ -103,7 +103,11 @@ const Register = ({ setAlert, register }) => {
               />
             </div>
             <div className='center options'>
-              <input type='submit' className='btn light' value='submit' />
+              <input
+                type='submit'
+                value='submit'
+                className='btn submit light'
+              />
             </div>
           </div>
         </form>

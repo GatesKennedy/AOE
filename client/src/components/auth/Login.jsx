@@ -1,9 +1,13 @@
 import React, { Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
 import NavMin from '../nav/NavMin';
+//  REDUX
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { login } from '../../Rdx_actions/axn_auth';
 //  import axios from 'axios';
 
-const Login = () => {
+const Login = ({ login }) => {
   const [formData, setFormData] = useState({
     username: '',
     password: ''
@@ -14,14 +18,17 @@ const Login = () => {
   const onChange = e =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
-  const onSubmit = e => {
+  const onSubmit = async e => {
     e.preventDefault();
-    if (password) {
-      console.log('MSG: password confirmation failed');
-    } else {
-      console.log(formData);
-      console.log('hello again..');
-    }
+    login({ username, password });
+    console.log('Login.jsx: onSubmit(): formData:');
+    console.log(formData);
+    // if (password) {
+    //   console.log('MSG: password confirmation failed');
+    // } else {
+    //   console.log(formData);
+    //   console.log('hello again..');
+    // }
   };
 
   return (
@@ -32,8 +39,8 @@ const Login = () => {
           <h2 className='msg center'>welcome back, Friend</h2>
         </div>
         <form className='center' onSubmit={e => onSubmit(e)}>
-          <ul className='column'>
-            <li>
+          <div className='column form-group'>
+            <div className='form-field'>
               <input
                 name='username'
                 type='text'
@@ -42,34 +49,39 @@ const Login = () => {
                 placeholder='username'
                 className='center input'
               />
-            </li>
-            <li>
+            </div>
+            <div className='form-field'>
               <input
-                name='username'
+                name='password'
                 type='password'
                 value={password}
                 onChange={e => onChange(e)}
                 placeholder='password'
                 className='center input'
               />
-            </li>
-            <li className='center options'>
-              <input
-                type='submit'
-                value='submit'
-                className='btn submit light'
-              />
-            </li>
-          </ul>
+            </div>
+            <div className='center options'>
+              <input type='submit' value='login' className='btn submit light' />
+            </div>
+          </div>
         </form>
       </section>
       <p className='center options'>
         <Link to='/join'>
-          <button className='btn light'>join?</button>
+          <button className='btn submit light'>join?</button>
         </Link>
       </p>
     </Fragment>
   );
 };
 
-export default Login;
+Login.propTypes = {
+  // prop:  snip= <ptfr> 'func prop type required'
+  login: PropTypes.func.isRequired
+};
+
+//  Connect Actions (state, {axn,..}) to Component (Register) to REDUX
+export default connect(
+  null,
+  { login }
+)(Login);
