@@ -9,7 +9,7 @@ import { logout } from '../../Rdx_actions/axn_auth';
 import MenuAOE from './MenuAOE';
 import MenuMore from './MenuMore';
 
-const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
+const NavStd = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
     <ul>
       <Link to='/dash'>
@@ -69,7 +69,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   );
 };
 
-Navbar.propTypes = {
+NavStd.propTypes = {
   logout: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired
 };
@@ -81,4 +81,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   { logout }
-)(Navbar);
+)(NavStd);

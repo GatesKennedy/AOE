@@ -37,11 +37,11 @@ const App = () => {
             <Switch>
               <Route exact path='/register' component={Register} />
               <Route exact path='/login' component={Login} />
+              <Route exact path='/dash' component={Dash} />
+              <Route exact path='/ctrl' component={Ctrl} />
+              <Route exact path='/open' component={Open} />
             </Switch>
           </section>
-          <Route exact path='/dash' component={Dash} />
-          <Route exact path='/ctrl' component={Ctrl} />
-          <Route exact path='/open' component={Open} />
         </Fragment>
       </Router>
     </Provider>

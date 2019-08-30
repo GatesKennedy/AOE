@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from 'react';
 import { Link, Redirect } from 'react-router-dom';
-import NavMin from '../nav/NavMin';
+import NavStd from '../nav/NavStd';
 //  REDUX
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -38,7 +38,7 @@ const Login = ({ login, isAuthenticated }) => {
 
   return (
     <Fragment>
-      <NavMin />
+      <NavStd />
       <section className='theme dark hello center'>
         <div className='greeting center'>
           <h2 className='msg center'>welcome back, Friend</h2>

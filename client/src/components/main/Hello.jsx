@@ -1,12 +1,12 @@
 import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 
-import NavMin from '../nav/NavMin';
+import NavStd from '../nav/NavStd';
 
 const Hello = () => {
   return (
     <Fragment>
-      <NavMin />
+      <NavStd />
       <section className='theme dark hello center'>
         <div className='greeting center'>
           <h2 className='msg center'>hello, it's great to see You</h2>

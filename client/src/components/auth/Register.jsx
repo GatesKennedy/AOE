@@ -1,7 +1,7 @@
 //  React
 import React, { Fragment, useState } from 'react';
 import { Link, Redirect } from 'react-router-dom';
-import NavMin from '../nav/NavMin';
+import NavStd from '../nav/NavStd';
 import PropTypes from 'prop-types';
 //  REDUX
 import { connect } from 'react-redux';
@@ -60,7 +60,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
 
   return (
     <Fragment>
-      <NavMin />
+      <NavStd />
       <section className='theme dark hello center'>
         <div className='greeting center'>
           <h2 className='msg center'>glad You could make it</h2>
