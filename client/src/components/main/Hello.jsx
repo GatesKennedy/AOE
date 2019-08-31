@@ -1,9 +1,14 @@
 import React, { Fragment } from 'react';
-import { Link } from 'react-router-dom';
-
+import { Link, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import NavStd from '../nav/NavStd';
 
-const Hello = () => {
+const Hello = ({ isAuthenticated }) => {
+  if (isAuthenticated) {
+    return <Redirect to='/dash' />;
+  }
+
   return (
     <Fragment>
       <NavStd />
@@ -26,4 +31,12 @@ const Hello = () => {
   );
 };
 
-export default Hello;
+Hello.propTypes = {
+  isAuthenticated: PropTypes.bool
+};
+
+const mapStateToProps = state => ({
+  isAuthenticated: state.auth.isAuthenticated
+});
+
+export default connect(mapStateToProps)(Hello);
