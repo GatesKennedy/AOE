@@ -15,7 +15,7 @@ import store from './store';
 import { loadUser } from './Rdx_actions/axn_auth';
 import setAuthToken from './util/setAuthToken';
 // === Style ===
-import './App.css';
+import './sass/App.scss';
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);

@@ -1,0 +1,179 @@
+@import 'config';
+// ============
+// === core ===
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  background-color: $white-2;
+  color: $black-1;
+}
+
+a {
+  text-decoration: none;
+  color: $black-2;
+}
+
+ul {
+  list-style: none;
+  display: inline-flex;
+}
+
+img {
+  width: 100%;
+}
+
+// =================
+// === structure ===
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.column {
+  display: block;
+  align-content: center;
+}
+
+.options {
+  background-color: $black-2;
+  padding: 1rem;
+}
+
+.theme {
+  height: 100%;
+  background-color: $black-2;
+}
+
+.dark {
+  background-color: $black-2;
+  color: $white-2;
+}
+
+.light {
+  background-color: $white-3;
+  color: $black-2;
+}
+
+button {
+  background-color: $white-3;
+  color: $black-2;
+  width: 5rem;
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  border: none;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+input {
+  margin: 0.5rem 1rem;
+}
+
+// ============
+// === navi ===
+
+.navi {
+  max-height: 4rem;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0.5rem 0 0.1rem 0;
+}
+
+.navi .menu {
+  margin: 0.3rem 0.7rem;
+}
+
+.navi .center ul {
+  margin: 0.7rem;
+  width: 50vw;
+  justify-content: space-evenly;
+}
+
+.navi li {
+  background-color: $black-2;
+  width: 3rem;
+  display: inline-flex;
+  justify-content: center;
+}
+
+.navi .center a {
+  color: $white-2;
+}
+
+#menuAOE {
+  margin-top: 0.4rem;
+}
+
+// ============
+// === dash ===
+.dash {
+  margin-left: 0.4rem;
+}
+.group-name {
+  background-color: $black-3;
+  color: $white-2;
+  margin-bottom: 2px;
+  padding-left: 1rem;
+}
+.app-grid {
+  background-color: $white-3;
+}
+
+// =============
+// === hello ===
+.hello {
+  display: grid;
+}
+.greeting {
+  color: $white-2;
+}
+
+// ==============
+// ===  show  ===
+
+.show {
+  padding: 1rem;
+}
+
+.spin {
+  width: 200px;
+}
+
+// ==============
+// === alerts ===
+.alert {
+  padding-left: 1rem;
+}
+
+.alert-warn {
+  background-color: #ac3e3e;
+  color: #fff;
+}
+
+.alert-good {
+  background-color: $good-1;
+  color: #fff;
+}
+
+.alert-note {
+  background-color: $note-1;
+  color: $white-3;
+}
