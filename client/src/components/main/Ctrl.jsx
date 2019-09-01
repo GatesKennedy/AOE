@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getCurrentSelf } from '../../Rdx_actions/axn_self';
 
-import NavStd from '../nav/NavStd';
+import Self from '../drop/Self';
+import Drop from '../drop/Drop';
 import Spinner from '../show/spin';
 
 const Ctrl = ({ getCurrentSelf, auth, self: { profile, loading } }) => {
@@ -13,19 +14,15 @@ const Ctrl = ({ getCurrentSelf, auth, self: { profile, loading } }) => {
 
   return loading && profile == null ? (
     <Fragment>
-      <NavStd />
-      <section className='center'>
+      <section className='ctrl center'>
         <Spinner />
       </section>
     </Fragment>
   ) : (
     <Fragment>
-      <NavStd />
-      <section class='dash group'>
-        <div>
-          <h4 class='group-name'>aoe group1</h4>
-        </div>
-        <div class='app-grid'>oops.. there's nothing here yet.</div>
+      <section className='ctrl drop group'>
+        <Self />
+        <Drop />
       </section>
     </Fragment>
   );

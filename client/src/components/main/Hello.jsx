@@ -11,7 +11,6 @@ const Hello = ({ isAuthenticated }) => {
 
   return (
     <Fragment>
-      <NavStd />
       <section className='theme dark hello center'>
         <div className='greeting center'>
           <h2 className='msg center'>hello, it's great to see You</h2>

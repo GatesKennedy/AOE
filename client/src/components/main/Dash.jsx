@@ -1,19 +1,40 @@
-import React, { Fragment } from 'react';
-import NavStd from '../nav/NavStd';
+import React, { Fragment, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { getCurrentSelf } from '../../Rdx_actions/axn_self';
+
+import Self from '../drop/Self';
+import Drop from '../drop/Drop';
 import Spinner from '../show/spin';
 
-const Dash = () => {
-  return (
+const Dash = ({ getCurrentSelf, auth, self: { profile, loading } }) => {
+  return loading && profile === null ? (
     <Fragment>
-      <NavStd />
-      <section class='dash group'>
-        <div>
-          <h4 class='group-name'>aoe group1</h4>
-        </div>
-        <div class='app-grid'>oops.. there's nothing here yet.</div>
+      <section className='dash center'>
+        <Spinner />
+      </section>
+    </Fragment>
+  ) : (
+    <Fragment>
+      <section className='dash drop group'>
+        <Self />
+        <Drop />
       </section>
     </Fragment>
   );
 };
 
-export default Dash;
+Dash.propTypes = {
+  auth: PropTypes.object.isRequired,
+  self: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
+  auth: state.auth,
+  self: state.self
+});
+
+export default connect(
+  mapStateToProps,
+  { getCurrentSelf }
+)(Dash);

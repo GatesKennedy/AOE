@@ -1,11 +1,11 @@
 import React, { Fragment, useState } from 'react';
 import { Link, Redirect } from 'react-router-dom';
-import NavStd from '../nav/NavStd';
 //  REDUX
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { login } from '../../Rdx_actions/axn_auth';
-//  import axios from 'axios';
+
+import Btn_Register from './btn/btn_Register';
 
 const Login = ({ login, isAuthenticated }) => {
   const [formData, setFormData] = useState({
@@ -23,12 +23,6 @@ const Login = ({ login, isAuthenticated }) => {
     login({ username, password });
     console.log('Login.jsx: onSubmit(): formData:');
     console.log(formData);
-    // if (password) {
-    //   console.log('MSG: password confirmation failed');
-    // } else {
-    //   console.log(formData);
-    //   console.log('hello again..');
-    // }
   };
 
   //  Redirect if User Authenticated
@@ -38,7 +32,6 @@ const Login = ({ login, isAuthenticated }) => {
 
   return (
     <Fragment>
-      <NavStd />
       <section className='theme dark hello center'>
         <div className='greeting center'>
           <h2 className='msg center'>welcome back, Friend</h2>
@@ -66,16 +59,12 @@ const Login = ({ login, isAuthenticated }) => {
               />
             </div>
             <div className='center options'>
-              <input type='submit' value='login' className='btn submit light' />
+              <input type='submit' value='go' className='btn submit light' />
             </div>
           </div>
         </form>
       </section>
-      <p className='center options'>
-        <Link to='/join'>
-          <button className='btn submit light'>join?</button>
-        </Link>
-      </p>
+      <Btn_Register />
     </Fragment>
   );
 };

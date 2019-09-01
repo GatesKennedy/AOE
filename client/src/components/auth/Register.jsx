@@ -8,10 +8,8 @@ import { connect } from 'react-redux';
 import { setAlert } from '../../Rdx_actions/axn_alert';
 import { register } from '../../Rdx_actions/axn_auth';
 
-//  import axios from 'axios';
+import Btn_Login from './btn/btn_Login';
 
-//  destructure props.setAlert
-//  const Join = props => {
 const Register = ({ setAlert, register, isAuthenticated }) => {
   const [formData, setFormData] = useState({
     username: '',
@@ -60,7 +58,6 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
 
   return (
     <Fragment>
-      <NavStd />
       <section className='theme dark hello center'>
         <div className='greeting center'>
           <h2 className='msg center'>glad You could make it</h2>
@@ -108,20 +105,12 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
               />
             </div>
             <div className='center options'>
-              <input
-                type='submit'
-                value='submit'
-                className='btn submit light'
-              />
+              <input type='submit' value='go' className='btn submit light' />
             </div>
           </div>
         </form>
       </section>
-      <p className='center options'>
-        <Link to='/login'>
-          <button className='btn light'>login?</button>
-        </Link>
-      </p>
+      <Btn_Login />
     </Fragment>
   );
 };

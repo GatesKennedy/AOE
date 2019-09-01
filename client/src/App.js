@@ -2,6 +2,7 @@ import React, { Fragment, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 // === comps ===
 import Hello from './components/main/Hello';
+import Navi from './components/nav/NavStd';
 import Dash from './components/main/Dash';
 import Ctrl from './components/main/Ctrl';
 import Open from './components/main/Open';
@@ -32,9 +33,10 @@ const App = () => {
     <Provider store={store}>
       <Router>
         <Fragment>
+          <Alert />
+          <Navi />
           <Route exact path='/' component={Hello} />
           <section className='container'>
-            <Alert />
             <Switch>
               <Route exact path='/register' component={Register} />
               <Route exact path='/login' component={Login} />

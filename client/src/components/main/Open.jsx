@@ -4,8 +4,7 @@ import NavStd from '../nav/NavStd';
 const Open = () => {
   return (
     <Fragment>
-      <NavStd />
-      <section class='dash group'>
+      <section class='open drop group'>
         <div>
           <h4 class='group-name'>
             <i class='fas fa-search' />
@@ -18,7 +17,7 @@ const Open = () => {
         </div>
       </section>
 
-      <section class='dash group'>
+      <section class='open drop group'>
         <div>
           <h4 class='group-name'>
             <i class='fas fa-filter' />
