@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import NavStd from '../nav/NavStd';
+import Spinner from '../show/spin';
 
 const Dash = () => {
   return (

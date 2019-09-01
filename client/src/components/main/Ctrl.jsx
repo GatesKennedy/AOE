@@ -2,14 +2,18 @@ import React, { Fragment, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getCurrentSelf } from '../../Rdx_actions/axn_self';
-import NavStd from '../nav/NavStd';
 
-const Ctrl = ({ getCurrentSelf, auth, self }) => {
+import NavStd from '../nav/NavStd';
+import Spinner from '../show/spin';
+
+const Ctrl = ({ getCurrentSelf, auth, self: { profile, loading } }) => {
   useEffect(() => {
     getCurrentSelf();
   }, []);
 
-  return (
+  return loading && profile == null ? (
+    <Spinner />
+  ) : (
     <Fragment>
       <NavStd />
       <section class='dash group'>
