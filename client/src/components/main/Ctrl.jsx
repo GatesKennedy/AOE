@@ -1,7 +1,9 @@
+//  React
 import React, { Fragment, useEffect } from 'react';
-import PropTypes from 'prop-types';
+//  REDUX
 import { connect } from 'react-redux';
 import { getCurrentSelf } from '../../Rdx_actions/axn_self';
+import PropTypes from 'prop-types';
 
 import Self from '../drop/Self';
 import Drop from '../drop/Drop';

@@ -11,3 +11,5 @@ export const GET_SELF = 'GET_SELF';
 export const SELF_ERROR = 'SELF_ERROR';
 export const GET_THEY = 'GET_THEY';
 export const THEY_ERROR = 'THEY_ERROR';
+export const OPEN_GET = 'OPEN_GET';
+export const OPEN_ERROR = 'OPEN_ERROR';

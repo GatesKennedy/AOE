@@ -1,32 +1,49 @@
-import React, { Fragment } from 'react';
-import NavStd from '../nav/NavStd';
+//  React
+import React, { Fragment, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+//  REDUX
+import { connect } from 'react-redux';
+import { getOpenApps } from '../../Rdx_actions/axn_open';
+import PropTypes from 'prop-types';
 
-const Open = () => {
-  return (
+import Find from '../drop/Find';
+import Sort from '../drop/Sort';
+import Drop from '../drop/Drop';
+import Spinner from '../show/spin';
+
+const Open = ({ getOpenApps, auth, open: { apps, loading } }) => {
+  useEffect(() => {
+    getOpenApps();
+  }, []);
+
+  return loading && apps === null ? (
     <Fragment>
-      <section class='open drop group'>
-        <div>
-          <h4 class='group-name'>
-            <i class='fas fa-search' />
-            <input
-              class='search'
-              type='text'
-              placeholder=' ...are You curious?'
-            />
-          </h4>
-        </div>
+      <section className='open center'>
+        <Spinner />
       </section>
-
-      <section class='open drop group'>
-        <div>
-          <h4 class='group-name'>
-            <i class='fas fa-filter' />
-          </h4>
-        </div>
-        <div class='app-grid'>oops.. there's nothing here yet.</div>
+    </Fragment>
+  ) : (
+    <Fragment>
+      <section className='open drop group'>
+        <Find />
+        <Sort />
+        <Drop />
       </section>
     </Fragment>
   );
 };
 
-export default Open;
+Open.propTypes = {
+  auth: PropTypes.object.isRequired,
+  apps: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
+  auth: state.auth,
+  apps: state.apps
+});
+
+export default connect(
+  mapStateToProps,
+  { getOpenApps }
+)(Open);

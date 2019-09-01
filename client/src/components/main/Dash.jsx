@@ -8,6 +8,10 @@ import Drop from '../drop/Drop';
 import Spinner from '../show/spin';
 
 const Dash = ({ getCurrentSelf, auth, self: { profile, loading } }) => {
+  useEffect(() => {
+    getCurrentSelf();
+  }, []);
+
   return loading && profile === null ? (
     <Fragment>
       <section className='dash center'>
