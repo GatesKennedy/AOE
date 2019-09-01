@@ -139,3 +139,9 @@ input {
   background-color: #ac3e3e;
   color: #fff;
 }
+.show {
+  padding: 1rem;
+}
+.spin {
+  width: 200px;
+}

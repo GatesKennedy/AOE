@@ -12,7 +12,12 @@ const Ctrl = ({ getCurrentSelf, auth, self: { profile, loading } }) => {
   }, []);
 
   return loading && profile == null ? (
-    <Spinner />
+    <Fragment>
+      <NavStd />
+      <section className='center'>
+        <Spinner />
+      </section>
+    </Fragment>
   ) : (
     <Fragment>
       <NavStd />
