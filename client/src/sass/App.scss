@@ -82,6 +82,19 @@ button {
   font-size: 16px;
 }
 
+.btn {
+  width: 5rem;
+  min-width: 5rem;
+  height: 100%;
+  margin: 0rem 0.5rem;
+  padding: 0.1rem 1rem;
+  text-align: center;
+  border: none;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
 input {
   margin: 0.5rem 1rem;
 }
@@ -94,15 +107,14 @@ input {
   display: flex;
   justify-content: space-between;
   margin: 0;
-  padding: 0.5rem 0 0.1rem 0;
+  padding: 0.5rem 0 0.3rem 0;
 }
 
 .navi .menu {
-  margin: 0.3rem 0.7rem;
+  margin: 0rem 0.7rem;
 }
 
-.navi .center ul {
-  margin: 0.7rem;
+.navi .main {
   width: 50vw;
   justify-content: space-evenly;
 }

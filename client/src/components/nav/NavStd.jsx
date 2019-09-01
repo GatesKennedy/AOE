@@ -11,60 +11,61 @@ import MenuMore from './MenuMore';
 
 const NavStd = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
-    <ul>
-      <Link to='/dash'>
-        <li className='btn dark'>dash</li>
-      </Link>
-      <Link to='/ctrl'>
-        <li className='btn dark'>ctrl</li>
-      </Link>
-      <Link to='/open'>
-        <li className='btn dark'>open</li>
-      </Link>
-    </ul>
+    <nav className='navi light'>
+      <div className='center menu'>
+        <Link to='/' id='menuAOE' className='center'>
+          {' '}
+          <i className='dark fas fa-infinity' />
+        </Link>
+      </div>
+      <div className='center main'>
+        <Link to='/dash'>
+          <btn className='btn dark'>dash</btn>
+        </Link>
+        <Link to='/ctrl'>
+          <btn className='btn dark'>ctrl</btn>
+        </Link>
+        <Link to='/open'>
+          <btn className='btn dark'>open</btn>
+        </Link>
+      </div>
+      <div className='center menu'>
+        <Link to='/'>
+          <a onClick={logout} href='#!'>
+            <i name='logout' className='dark fas fa-sign-out-alt' />
+          </a>
+        </Link>
+      </div>
+    </nav>
   );
 
   const guestLinks = (
-    <Link to='/aoe'>
-      <h2 className='center msg dark'>.: a o e :.</h2>
-    </Link>
-  );
-
-  const logoutLink = (
-    <Link to='/'>
-      <a onClick={logout} href='#!'>
-        <i name='logout' className='fas fa-sign-out-alt' />
-      </a>
-    </Link>
-  );
-
-  const infoLink = (
-    <Link to='/' className=''>
-      {' '}
-      <i className='fas fa-wave-square' />
-    </Link>
+    <nav className='navi dark'>
+      <div className='center menu'>
+        <Link to='/' id='menuAOE' className='center'>
+          {' '}
+          <i className='fas fa-infinity' />
+        </Link>
+      </div>
+      <div className='center menu'>
+        <Link to='/aoe'>
+          <h2 className='center msg dark'>.: a o e :.</h2>
+        </Link>
+      </div>
+      <div className='center menu'>
+        <Link to='/' className=''>
+          {' '}
+          <i className='fas fa-wave-square' />
+        </Link>
+      </div>
+    </nav>
   );
 
   return (
     <Fragment>
-      <nav className='navi light'>
-        <div className='center menu'>
-          <Link to='/' id='menuAOE' className='center'>
-            {' '}
-            <i className='fas fa-infinity' />
-          </Link>
-        </div>
-        <div className='center menu'>
-          {!loading && (
-            <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>
-          )}
-        </div>
-        <div className='center menu'>
-          {!loading && (
-            <Fragment>{isAuthenticated ? logoutLink : infoLink}</Fragment>
-          )}
-        </div>
-      </nav>
+      {!loading && (
+        <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>
+      )}
     </Fragment>
   );
 };
