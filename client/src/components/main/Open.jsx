@@ -11,12 +11,12 @@ import Sort from '../drop/Sort';
 import Drop from '../drop/Drop';
 import Spinner from '../show/spin';
 
-const Open = ({ getOpenApps, auth, open: { apps, loading } }) => {
+const Open = ({ getOpenApps, auth, apps: { appList, loading } }) => {
   useEffect(() => {
     getOpenApps();
   }, []);
 
-  return loading && apps === null ? (
+  return loading && appList === null ? (
     <Fragment>
       <section className='open center'>
         <Spinner />

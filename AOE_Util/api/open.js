@@ -1,11 +1,12 @@
-//  ~ Depend ~
 const express = require('express');
+const request = require('request');
+const require = require('config');
 const mongoose = require('mongoose');
 const router = express.Router();
-const jwt = require('jsonwebtoken');
 
 const auth = require('../middleware/auth');
-const Account = require('../models/Account');
+const Open = require('../models/Open');
+const App = require('../models/App');
 
 //  ~ Routes ~
 
@@ -13,20 +14,17 @@ const Account = require('../models/Account');
 //  @desc       Retrieve all apps in market
 //  @access     Public
 router.get('/', auth, async (req, res) => {
-    try {
-        const profile = await Profile.findOne({
-            user: req.user.id
-        }).populate('user', ['name', 'avatar']);
-
-        if (!profile) {
-            return res.status(400).json({
-                msg: 'There is no profile for this user'
-            });
-        }
-    } catch (err) {
-        console.error(err.message);
-        res.status(500).send('MSG: Server Error');
-    }
+  try {
+    const appList = await App.find().populate(
+      'appId',
+      'developer',
+      'certified'
+    );
+    res.send(appList);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send("hmm... there's nothing here yet...");
+  }
 });
 
 //  ~ Share ~

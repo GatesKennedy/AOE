@@ -1,8 +1,7 @@
 import { OPEN_GET, OPEN_ERROR } from '../Rdx_actions/axn_types';
 
 const initialState = {
-  apps: null,
-  they: [],
+  appList: null,
   loading: true,
   error: {}
 };
@@ -14,13 +13,13 @@ export default function(state = initialState, action) {
     case OPEN_GET:
       return {
         ...state,
-        apps: payload,
+        appList: payload,
         loading: false
       };
     case OPEN_ERROR:
       return {
         ...state,
-        errpr: payload,
+        error: payload,
         loading: false
       };
 
