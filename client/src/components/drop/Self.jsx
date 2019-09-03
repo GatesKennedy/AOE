@@ -23,7 +23,6 @@ const Self = ({
     </Fragment>
   ) : (
     <Fragment>
-      {console.log(profile)}
       <section class='dash group'>
         <div>
           <h4 class='group-name'>
@@ -38,7 +37,7 @@ const Self = ({
         ) : (
           <Fragment>
             <p>hmm... nothing's here yet...</p>
-            <Link to='/self-edit' className='btn center dark'>
+            <Link to='/create-profile' className='btn center dark'>
               Create Profile
             </Link>
           </Fragment>
