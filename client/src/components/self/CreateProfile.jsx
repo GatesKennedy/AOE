@@ -22,50 +22,63 @@ const CreateProfile = ({
 
   return loading && profile === null ? (
     <Fragment>
-      <section className='self group'>
+      <section className='self group center'>
         <Spinner />
       </section>
     </Fragment>
   ) : (
     <Fragment>
       <form className='form'>
-        <div className='profile form-group input-text'>
-          <input type='text' placeholder='real name..' name='name' />
-          <small className='form-prompt'>who are You, really?</small>
-        </div>
+        <section>
+          <div className='profile form-group input-text'>
+            <input
+              type='text'
+              className='form-field'
+              placeholder='real name..'
+              name='name'
+            />
+            <small className='form-prompt'>who are You, really?</small>
+          </div>
 
-        <div className='profile form-group input-text'>
-          <textarea
-            placeholder='bio... err, what do you care about?'
-            name='bio'
-          ></textarea>
-          <small class='form-prompt'>what excites You?</small>
-        </div>
+          <div className='profile form-group input-text'>
+            <textarea
+              className='form-field'
+              placeholder='bio... err, what do you care about?'
+              name='bio'
+            ></textarea>
+            <small class='form-prompt'>what excites You?</small>
+          </div>
 
-        <div className='profile form-group input-text'>
-          <input type='text' placeholder='Website..' name='website' />
-          <small className='form-prompt'>
-            personal or associated website..
-          </small>
-        </div>
+          <div className='profile form-group input-text'>
+            <input
+              type='text'
+              className='form-field'
+              placeholder='website..'
+              name='website'
+            />
+            <small className='form-prompt'>
+              personal or associated website..
+            </small>
+          </div>
 
-        <div className='profile form-group input-text'>
-          <select name='location'>
-            <option value='0'>* where are you in Portland?</option>
-            <option value='inner_southeast'>inner southeast</option>
-            <option value='outer_southeast'>outer southeast</option>
-            <option value='inner_northeast'>inner northeast</option>
-            <option value='outer_northeast'>outer northeast</option>
-            <option value='inner_southwest'>inner southwest</option>
-            <option value='outer_southwest'>outer southwest</option>
-            <option value='northwest'>northwest</option>
-            <option value='saint_johns'>saint johns</option>
-          </select>
-          <small className='form-prompt'>
-            where are you in Portland? (eg. inner se)
-          </small>
-        </div>
-        <div className='profile form-group center'>
+          <div className='profile form-group input-text'>
+            <select className='form-field' name='location'>
+              <option value='0'>where?</option>
+              <option value='inner_southeast'>inner southeast</option>
+              <option value='outer_southeast'>outer southeast</option>
+              <option value='inner_northeast'>inner northeast</option>
+              <option value='outer_northeast'>outer northeast</option>
+              <option value='inner_southwest'>inner southwest</option>
+              <option value='outer_southwest'>outer southwest</option>
+              <option value='northwest'>northwest</option>
+              <option value='saint_johns'>saint johns</option>
+            </select>
+            <small className='form-prompt'>
+              where are You in Portland? (eg. inner se)
+            </small>
+          </div>
+        </section>
+        <div className='profile center'>
           <input type='submit' value='save' className='btn dark' />
           <Link to='/dash' className='btn dark'>
             bail

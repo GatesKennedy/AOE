@@ -85,6 +85,7 @@ button {
 .btn {
   width: 5rem;
   min-width: 5rem;
+  height: 1.9rem;
   height: 100%;
   margin: 0rem 0.5rem;
   padding: 0.1rem 1rem;
@@ -93,10 +94,6 @@ button {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-}
-
-input {
-  margin: 0.5rem 1rem;
 }
 
 // ============
@@ -156,6 +153,24 @@ input {
 }
 .greeting {
   color: $white-2;
+}
+
+// ===============
+// ===  forms  ===
+
+.form {
+  padding: 1rem;
+}
+.form-group {
+  padding: 0.2rem;
+}
+
+.form-field {
+  width: 25vw;
+}
+
+.form-prompt {
+  padding-left: 0.75rem;
 }
 
 // ==============
