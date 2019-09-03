@@ -1,44 +1,29 @@
 import React, { Fragment, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getCurrentSelf } from '../../Rdx_actions/axn_self';
 
 import Self from '../drop/Self';
-import Drop from '../drop/Drop';
+import Tool from '../drop/Tool';
 import Spinner from '../show/spin';
+//import Profile from '../drop/Profile';
 
-const Dash = ({ getCurrentSelf, auth, self: { profile, loading } }) => {
-  useEffect(() => {
-    getCurrentSelf();
-  }, []);
-
-  return loading && profile === null ? (
-    <Fragment>
-      <section className='dash center'>
-        <Spinner />
-      </section>
-    </Fragment>
-  ) : (
+const Dash = auth => {
+  return (
     <Fragment>
       <section className='dash drop group'>
         <Self />
-        <Drop />
+        <Tool />
       </section>
     </Fragment>
   );
 };
 
 Dash.propTypes = {
-  auth: PropTypes.object.isRequired,
-  self: PropTypes.object.isRequired
+  auth: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
-  auth: state.auth,
-  self: state.self
+  auth: state.auth
 });
 
-export default connect(
-  mapStateToProps,
-  { getCurrentSelf }
-)(Dash);
+export default connect(mapStateToProps)(Dash);

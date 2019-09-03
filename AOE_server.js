@@ -17,7 +17,7 @@ aoe.use(
 //  Define Routes
 
 aoe.use('/api/auth', require('./AOE_Util/api/auth'));
-aoe.use('/api/self', require('./AOE_Util/api/self'));
+aoe.use('/api/profile', require('./AOE_Util/api/profile'));
 aoe.use('/api/users', require('./AOE_Util/api/users'));
 aoe.use('/api/posts', require('./AOE_Util/api/posts'));
 aoe.use('/api/open', require('./AOE_Util/api/open'));

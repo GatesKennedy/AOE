@@ -19,6 +19,7 @@ router.get('/', auth, async (req, res) => {
     const user = await User.findById(req.user.id).select('-password');
     res.json(user);
   } catch (err) {
+    console.log('api/auth.js: catch err');
     console.error(err.message);
     res.status(500).send('MSG: Server Error');
   }
@@ -79,7 +80,6 @@ router.post(
           ]
         });
       }
-      console.log('auth.js: line 82');
       //  Return jsonWebToken
       const payload = {
         user: {

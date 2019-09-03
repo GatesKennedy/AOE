@@ -8,7 +8,6 @@ import PropTypes from 'prop-types';
 
 import Find from '../drop/Find';
 import Sort from '../drop/Sort';
-import Drop from '../drop/Drop';
 import Spinner from '../show/spin';
 
 const Open = ({ getOpenApps, auth, apps: { appList, loading } }) => {
@@ -27,7 +26,6 @@ const Open = ({ getOpenApps, auth, apps: { appList, loading } }) => {
       <section className='open drop group'>
         <Find />
         <Sort />
-        <Drop />
       </section>
     </Fragment>
   );

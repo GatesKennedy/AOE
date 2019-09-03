@@ -1,21 +1,22 @@
 import axios from 'axios';
 import { setAlert } from './axn_alert';
 
-import { GET_SELF, SELF_ERROR } from './axn_types';
+import { PROFILE_GET, PROFILE_ERROR } from './axn_types';
 
 // Get current users profile
-export const getCurrentSelf = () => async dispatch => {
+export const getCurrentProfile = () => async dispatch => {
   try {
-    const res = await axios.get('/api/self/me');
+    const res = await axios.get('/api/profile/me');
 
     dispatch({
-      type: GET_SELF,
+      type: PROFILE_GET,
       payload: res.data
     });
   } catch (err) {
-    console.log('axn_self.js: catch error');
+    console.log('axn_profile.js: catch error');
+
     dispatch({
-      type: SELF_ERROR,
+      type: PROFILE_ERROR,
       payload: { msg: err.response.statusText, status: err.response.status }
     });
   }

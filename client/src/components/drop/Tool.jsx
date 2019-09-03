@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Self from './Self';
 
-const Drop = props => {
+const Tool = props => {
   return (
     <Fragment>
       <section class='dash group'>
@@ -15,6 +15,6 @@ const Drop = props => {
   );
 };
 
-Drop.propTypes = {};
+Tool.propTypes = {};
 
-export default Drop;
+export default Tool;
