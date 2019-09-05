@@ -23,13 +23,7 @@ const Self = ({
     </Fragment>
   ) : (
     <Fragment>
-      <section class='dash group'>
-        <div>
-          <h4 class='group-name'>
-            <i className='fas fa-user white'></i>
-            {user && user.username}
-          </h4>
-        </div>
+      <section class='self group'>
         {profile !== null ? (
           <Fragment>
             <div class='app-grid'>...profile</div>

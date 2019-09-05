@@ -1,29 +1,62 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { getCurrentProfile } from '../../Rdx_actions/axn_profile';
 
 import Self from '../drop/Self';
 import Tool from '../drop/Tool';
 import Spinner from '../show/spin';
 //import Profile from '../drop/Profile';
 
-const Dash = auth => {
+const Dash = ({ getCurrentProfile, auth: { user } }) => {
+  useEffect(() => {
+    getCurrentProfile();
+  }, []);
+
+  const [displaySelf, toggleSelf] = useState(false);
+  const [displayTool, toggleTool] = useState(true);
+
   return (
     <Fragment>
-      <section className='dash drop group'>
-        <Self />
-        <Tool />
+      <section>
+        <div
+          onClick={() => toggleSelf(!displaySelf)}
+          type='button'
+          className='group-name dash drop group'
+        >
+          <h4>
+            <i className='fas fa-user white'></i>
+            {user && user.username}
+          </h4>
+        </div>
+
+        {displaySelf && <Self />}
+
+        <div
+          onClick={() => toggleTool(!displayTool)}
+          type='button'
+          className='group-name dash drop group'
+        >
+          <h4>tool group</h4>
+        </div>
+        {displayTool && <Tool />}
       </section>
     </Fragment>
   );
 };
 
 Dash.propTypes = {
-  auth: PropTypes.object.isRequired
+  getCurrentProfile: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired,
+  profile: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
-  auth: state.auth
+  auth: state.auth,
+  profile: state.profile
 });
 
-export default connect(mapStateToProps)(Dash);
+export default connect(
+  mapStateToProps,
+  { getCurrentProfile }
+)(Dash);
