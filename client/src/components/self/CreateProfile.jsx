@@ -18,6 +18,8 @@ const CreateProfile = ({
     location: ''
   });
 
+  const [displayBio, toggleBio] = useState(false);
+
   const { name, bio, website, location } = formData;
 
   return loading && profile === null ? (
@@ -41,13 +43,25 @@ const CreateProfile = ({
           </div>
 
           <div className='profile form-group input-text'>
-            <textarea
-              className='form-field'
-              placeholder='bio... err, what do you care about?'
-              name='bio'
-            ></textarea>
+            <button
+              onClick={() => toggleBio(!displayBio)}
+              type='button'
+              className='btn dark'
+            >
+              edit bio
+            </button>
             <small class='form-prompt'>what excites You?</small>
           </div>
+
+          {displayBio && (
+            <Fragment>
+              <textarea
+                className='form-field'
+                placeholder='bio... err, what do you care about?'
+                name='bio'
+              ></textarea>
+            </Fragment>
+          )}
 
           <div className='profile form-group input-text'>
             <input
