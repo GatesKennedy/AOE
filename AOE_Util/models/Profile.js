@@ -5,6 +5,9 @@ const ProfileSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'user'
   },
+  name: {
+    type: String
+  },
   bio: {
     type: String
   },
@@ -12,29 +15,7 @@ const ProfileSchema = new mongoose.Schema({
   location: {
     type: String
   },
-  status: {
-    type: String,
-    required: true
-  },
-  organizations: [
-    {
-      orgName: {
-        type: String,
-        required: true
-      },
-      title: {
-        type: String,
-        required: true
-      },
 
-      location: {
-        type: String
-      },
-      description: {
-        type: String
-      }
-    }
-  ],
   /*
   education: [
     {
@@ -66,24 +47,6 @@ const ProfileSchema = new mongoose.Schema({
       }
     }
   ],
-  
-  social: {
-    youtube: {
-      type: String
-    },
-    twitter: {
-      type: String
-    },
-    facebook: {
-      type: String
-    },
-    linkedin: {
-      type: String
-    },
-    instagram: {
-      type: String
-    }
-  },
   */
   date: {
     type: Date,

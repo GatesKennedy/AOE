@@ -29,7 +29,6 @@ const Dash = ({ getCurrentProfile, auth: { user } }) => {
             {user && user.username}
           </h4>
         </div>
-
         {displaySelf && <Self />}
 
         <div

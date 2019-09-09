@@ -1,16 +1,10 @@
 import React, { useState, Fragment } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getCurrentProfile } from '../../Rdx_actions/axn_profile';
+import { createProfile } from '../../Rdx_actions/axn_profile';
 
-import Spinner from '../show/spin';
-
-const CreateProfile = ({
-  getCurrentProfile,
-  auth: { user },
-  profile: { profile, loading }
-}) => {
+const CreateProfile = ({ createProfile, history }) => {
   const [formData, setFormData] = useState({
     name: '',
     bio: '',
@@ -18,19 +12,21 @@ const CreateProfile = ({
     location: ''
   });
 
-  const [displayBio, toggleBio] = useState(false);
-
   const { name, bio, website, location } = formData;
 
-  return loading && profile === null ? (
+  const [displayBio, toggleBio] = useState(false);
+
+  const onChange = e =>
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+
+  const onSubmit = e => {
+    e.preventDefault();
+    createProfile(formData, history);
+  };
+
+  return (
     <Fragment>
-      <section className='self group center'>
-        <Spinner />
-      </section>
-    </Fragment>
-  ) : (
-    <Fragment>
-      <form className='form'>
+      <form className='form' onSubmit={e => onSubmit(e)}>
         <section>
           <div className='profile form-group input-text'>
             <input
@@ -38,6 +34,8 @@ const CreateProfile = ({
               className='form-field'
               placeholder='real name..'
               name='name'
+              value={name}
+              onChange={e => onChange(e)}
             />
             <small className='form-prompt'>who are You, really?</small>
           </div>
@@ -52,13 +50,14 @@ const CreateProfile = ({
             </button>
             <small class='form-prompt'>what excites You?</small>
           </div>
-
           {displayBio && (
             <Fragment>
               <textarea
                 className='form-field'
                 placeholder='bio... err, what do you care about?'
                 name='bio'
+                value={bio}
+                onChange={e => onChange(e)}
               ></textarea>
             </Fragment>
           )}
@@ -69,6 +68,8 @@ const CreateProfile = ({
               className='form-field'
               placeholder='website..'
               name='website'
+              value={website}
+              onChange={e => onChange(e)}
             />
             <small className='form-prompt'>
               personal or associated website..
@@ -76,7 +77,12 @@ const CreateProfile = ({
           </div>
 
           <div className='profile form-group input-text'>
-            <select className='form-field' name='location'>
+            <select
+              className='form-field'
+              name='location'
+              value={location}
+              onChange={e => onChange(e)}
+            >
               <option value='0'>where?</option>
               <option value='inner_southeast'>inner southeast</option>
               <option value='outer_southeast'>outer southeast</option>
@@ -104,17 +110,11 @@ const CreateProfile = ({
 };
 
 CreateProfile.propTypes = {
-  getCurrentProfile: PropTypes.func.isRequired,
-  auth: PropTypes.object.isRequired,
-  profile: PropTypes.object.isRequired
+  createProfile: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired
 };
 
-const mapStateToProps = state => ({
-  auth: state.auth,
-  profile: state.profile
-});
-
 export default connect(
-  mapStateToProps,
-  { getCurrentProfile }
-)(CreateProfile);
+  null,
+  { createProfile }
+)(withRouter(CreateProfile));
