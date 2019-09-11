@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { getCurrentProfile } from '../../Rdx_actions/axn_profile';
 
 import Spinner from '../show/spin';
+import NavProf from '../nav/NavProf';
 
 const Self = ({
   getCurrentProfile,
@@ -26,6 +27,7 @@ const Self = ({
       <section class='self group'>
         {profile !== null ? (
           <Fragment>
+            <NavProf />
             <div class='app-grid'>...profile</div>
           </Fragment>
         ) : (

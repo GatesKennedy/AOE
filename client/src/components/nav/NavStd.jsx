@@ -10,6 +10,21 @@ import MenuAOE from './MenuAOE';
 import MenuMore from './MenuMore';
 
 const NavStd = ({ auth: { isAuthenticated, loading }, logout }) => {
+  let btns = {
+    btn1: {
+      title: 'dash',
+      link: '/dash'
+    },
+    btn2: {
+      title: 'ctrl',
+      link: '/ctrl'
+    },
+    btn3: {
+      title: 'open',
+      link: '/open'
+    }
+  };
+
   const authLinks = (
     <nav className='navi light'>
       <div className='center menu'>

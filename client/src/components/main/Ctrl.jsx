@@ -4,8 +4,8 @@ import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import Self from '../drop/Self';
-import Tool from '../drop/Tool';
+import Self from '../feat/Self';
+import Tool from '../feat/Tool';
 import Spinner from '../show/spin';
 
 const Ctrl = auth => {

@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getCurrentProfile } from '../../Rdx_actions/axn_profile';
 
-import Self from '../drop/Self';
-import Tool from '../drop/Tool';
+import Self from '../feat/Self';
+import Tool from '../feat/Tool';
 import Spinner from '../show/spin';
 //import Profile from '../drop/Profile';
 

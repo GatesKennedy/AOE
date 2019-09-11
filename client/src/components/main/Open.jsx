@@ -6,8 +6,8 @@ import { connect } from 'react-redux';
 import { getOpenApps } from '../../Rdx_actions/axn_open';
 import PropTypes from 'prop-types';
 
-import Find from '../drop/Find';
-import Sort from '../drop/Sort';
+import Find from '../feat/Find';
+import Sort from '../feat/Sort';
 import Spinner from '../show/spin';
 
 const Open = ({ getOpenApps, auth, apps: { appList, loading } }) => {
