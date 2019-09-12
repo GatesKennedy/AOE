@@ -8,6 +8,7 @@ import {
 
 const initialState = {
   profile: null,
+  profiles: [],
   repos: [],
   loading: true,
   error: {}
@@ -17,6 +18,7 @@ export default function(state = initialState, action) {
   const { type, payload } = action;
 
   switch (type) {
+    //  SELF
     case PROFILE_GET:
       return {
         ...state,
@@ -29,22 +31,30 @@ export default function(state = initialState, action) {
         profile: payload,
         loading: false
       };
-    case PROFILE_ERROR:
-      return {
-        ...state,
-        error: payload,
-        loading: false
-      };
     case PROFILE_CLEAR:
       return {
         ...state,
         profile: null,
         loading: false
       };
+    //  THEY
+    case PROFILES_GET:
+      return {
+        ...state,
+        profiles: payload,
+        loading: false
+      };
     case REPOS_GET:
       return {
         ...state,
         repos: payload,
+        loading: false
+      };
+    //  ERRORS
+    case PROFILE_ERROR:
+      return {
+        ...state,
+        error: payload,
         loading: false
       };
     default:

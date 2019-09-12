@@ -12,6 +12,7 @@ import Alert from './components/warn/Alert';
 import PrivateRoute from './components/routing/PrivateRoute';
 import CreateProfile from './components/self/CreateProfile';
 import EditProfile from './components/self/EditProfile';
+import Profiles from './components/self/Profiles';
 // === REDUX ===
 import { Provider } from 'react-redux';
 import store from './store';
@@ -42,9 +43,12 @@ const App = () => {
             <Switch>
               <Route exact path='/register' component={Register} />
               <Route exact path='/login' component={Login} />
+
               <PrivateRoute exact path='/dash' component={Dash} />
               <PrivateRoute exact path='/ctrl' component={Ctrl} />
               <PrivateRoute exact path='/open' component={Open} />
+
+              <Route exact path='/profiles' component={Profiles} />
               <PrivateRoute
                 exact
                 path='/create-profile'
