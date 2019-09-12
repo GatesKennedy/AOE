@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import Spinner from '../show/spin';
+import ProfileItem from '../self/ProfileItem';
 import { getProfiles } from '../../Rdx_actions/axn_profile';
 
 const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
@@ -10,7 +11,26 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
     getProfiles();
   }, []);
 
-  return <div></div>;
+  return (
+    <Fragment>
+      {loading ? (
+        <Spinner />
+      ) : (
+        <Fragment>
+          <h3>Friends</h3>
+          <div>
+            {profiles.length > 0 ? (
+              profiles.map(profile => (
+                <ProfileItem key={profile._id} profile={profile} />
+              ))
+            ) : (
+              <h4>No friends...</h4>
+            )}
+          </div>
+        </Fragment>
+      )}
+    </Fragment>
+  );
 };
 
 Profiles.propTypes = {
