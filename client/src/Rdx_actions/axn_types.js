@@ -11,10 +11,10 @@ export const LOGIN_FAIL = 'LOGIN_FAIL';
 export const LOGOUT = 'LOGOUT';
 //  Self
 export const PROFILE_GET = 'PROFILE_GET';
-
 export const PROFILE_ERROR = 'PROFILE_ERROR';
 export const PROFILE_CLEAR = 'PROFILE_CLEAR';
 export const PROFILE_UPDATE = 'PROFILE_UPDATE';
+
 export const PROFILES_GET = 'PROFILES_GET';
 export const REPOS_GET = 'REPOS_GET';
 export const THEY_GET = 'THEY_GET';

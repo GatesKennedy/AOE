@@ -3,6 +3,7 @@ import {
   PROFILE_ERROR,
   PROFILE_CLEAR,
   PROFILE_UPDATE,
+  PROFILES_GET,
   REPOS_GET
 } from '../Rdx_actions/axn_types';
 

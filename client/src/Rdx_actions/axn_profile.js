@@ -1,7 +1,13 @@
 import axios from 'axios';
 import { setAlert } from './axn_alert';
 
-import { PROFILE_GET, PROFILE_ERROR, PROFILE_CLEAR, REPOS_GET, PROFILES_GET } from './axn_types';
+import {
+  PROFILE_GET,
+  PROFILE_ERROR,
+  PROFILE_CLEAR,
+  REPOS_GET,
+  PROFILES_GET
+} from './axn_types';
 
 //  Get current users profile
 export const getCurrentProfile = () => async dispatch => {
@@ -23,8 +29,8 @@ export const getCurrentProfile = () => async dispatch => {
 };
 
 // Get all Profiles
-export const getCurrentProfile = () => async dispatch => {
-  dispatch({ type: PROFILE_CLEAR});
+export const getProfiles = () => async dispatch => {
+  dispatch({ type: PROFILE_CLEAR });
 
   try {
     const res = await axios.get('/api/profile');
