@@ -11,6 +11,7 @@ import Login from './components/auth/Login';
 import Alert from './components/warn/Alert';
 import PrivateRoute from './components/routing/PrivateRoute';
 import CreateProfile from './components/self/CreateProfile';
+import EditProfile from './components/self/EditProfile';
 // === REDUX ===
 import { Provider } from 'react-redux';
 import store from './store';
@@ -48,6 +49,11 @@ const App = () => {
                 exact
                 path='/create-profile'
                 component={CreateProfile}
+              />
+              <PrivateRoute
+                exact
+                path='/edit-profile'
+                component={EditProfile}
               />
             </Switch>
           </section>

@@ -6,10 +6,10 @@ const NavProf = () => {
     <Fragment>
       <div className=' main'>
         <div className='center'>
-          <Link to='/createProfile'>
+          <Link to='/edit-profile'>
             <btn className='btn dark'>edit</btn>
           </Link>
-          <Link to='/dash'>
+          <Link to='/self'>
             <btn className='btn dark'>view</btn>
           </Link>
         </div>

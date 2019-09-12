@@ -1,9 +1,9 @@
 import axios from 'axios';
 import { setAlert } from './axn_alert';
 
-import { PROFILE_GET, PROFILE_ERROR } from './axn_types';
+import { PROFILE_GET, PROFILE_ERROR, REPOS_GET } from './axn_types';
 
-// Get current users profile
+//  Get current users profile
 export const getCurrentProfile = () => async dispatch => {
   try {
     const res = await axios.get('/api/profile/me');
@@ -15,6 +15,40 @@ export const getCurrentProfile = () => async dispatch => {
   } catch (err) {
     console.log('axn_profile.js: catch error');
 
+    dispatch({
+      type: PROFILE_ERROR,
+      payload: { msg: err.response.statusText, status: err.response.status }
+    });
+  }
+};
+
+//  Get Profile by ID
+export const getProfileById = userId => async dispatch => {
+  try {
+    const res = await axios.get(`/api/profile/user${userId}`);
+
+    dispatch({
+      type: PROFILE_GET,
+      payload: res.data
+    });
+  } catch (err) {
+    dispatch({
+      type: PROFILE_ERROR,
+      payload: { msg: err.response.statusText, status: err.response.status }
+    });
+  }
+};
+
+//  Get Github repos
+export const getProjectRepos = username => async dispatch => {
+  try {
+    const res = await axios.get(`/api/profile/github/${username}`);
+
+    dispatch({
+      type: REPOS_GET,
+      payload: res.data
+    });
+  } catch (err) {
     dispatch({
       type: PROFILE_ERROR,
       payload: { msg: err.response.statusText, status: err.response.status }

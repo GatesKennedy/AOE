@@ -25,9 +25,9 @@ const Self = ({
   ) : (
     <Fragment>
       <section class='self group'>
+        <NavProf />
         {profile !== null ? (
           <Fragment>
-            <NavProf />
             <div class='app-grid'>...profile</div>
           </Fragment>
         ) : (
