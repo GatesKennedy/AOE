@@ -10,7 +10,10 @@ const NavProf = () => {
             <btn className='btn dark'>edit</btn>
           </Link>
           <Link to='/self'>
-            <btn className='btn dark'>view</btn>
+            <btn className='btn dark'>self</btn>
+          </Link>
+          <Link to='/profiles'>
+            <btn className='btn dark'>they</btn>
           </Link>
         </div>
         <div className='center'>.:.</div>
