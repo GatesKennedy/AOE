@@ -16,7 +16,6 @@ const NavProf = () => {
             <btn className='btn dark'>they</btn>
           </Link>
         </div>
-        <div className='center'>.:.</div>
       </div>
     </Fragment>
   );

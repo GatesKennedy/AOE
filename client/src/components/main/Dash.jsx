@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getCurrentProfile } from '../../Rdx_actions/axn_profile';
 
-import Self from '../feat/Self';
+import Self from '../self/Self';
 import Tool from '../feat/Tool';
 import Spinner from '../show/spin';
+import NavProf from '../nav/NavProf';
 //import Profile from '../drop/Profile';
 
 const Dash = ({ getCurrentProfile, auth: { user } }) => {
@@ -28,6 +29,7 @@ const Dash = ({ getCurrentProfile, auth: { user } }) => {
             <i className='fas fa-user white'></i>
             {user && user.username}
           </h4>
+          {displaySelf ? <NavProf /> : ''}
         </div>
         {displaySelf && <Self />}
 

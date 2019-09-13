@@ -1,11 +1,18 @@
 import React, { Fragment, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getCurrentProfile } from '../../Rdx_actions/axn_profile';
 
+import CreateProfile from './CreateProfile';
+import EditProfile from './EditProfile';
+import Profile from './Profile';
+import Profiles from './Profiles';
+
 import Spinner from '../show/spin';
 import NavProf from '../nav/NavProf';
+import Alert from '../warn/Alert';
+import PrivateRoute from '../routing/PrivateRoute';
 
 const Self = ({
   getCurrentProfile,
@@ -25,11 +32,8 @@ const Self = ({
   ) : (
     <Fragment>
       <section class='self group'>
-        <NavProf />
         {profile !== null ? (
-          <Fragment>
-            <div class='app-grid'>...profile</div>
-          </Fragment>
+          <Profile profile={profile} user={user} />
         ) : (
           <Fragment>
             <p>hmm... nothing's here yet...</p>
