@@ -8,10 +8,15 @@ const ProfileSchema = new mongoose.Schema({
   nameIRL: {
     type: String
   },
+  avatar: {
+    type: String
+  },
   bio: {
     type: String
   },
-  website: {},
+  website: {
+    type: String
+  },
   location: {
     type: String
   },

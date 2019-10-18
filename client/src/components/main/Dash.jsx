@@ -7,6 +7,7 @@ import Self from '../self/Self';
 import Tool from '../feat/Tool';
 import Spinner from '../show/spin';
 import NavProf from '../nav/NavProf';
+import NavMinor from '../nav/NavMinor';
 //import Profile from '../drop/Profile';
 
 const Dash = ({ getCurrentProfile, auth: { user } }) => {
@@ -16,6 +17,10 @@ const Dash = ({ getCurrentProfile, auth: { user } }) => {
 
   const [displaySelf, toggleSelf] = useState(false);
   const [displayTool, toggleTool] = useState(true);
+
+  const btn1 = 'self';
+  const btn2 = 'edit';
+  const btn3 = 'they';
 
   return (
     <Fragment>
