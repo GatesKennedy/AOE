@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import Self from './Self';
+import Self from '../self/Self';
 
 const Tool = props => {
   return (

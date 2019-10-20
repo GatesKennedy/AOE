@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 const btn_Register = () => {
   return (
-    <div className='center options'>
+    <div className='center'>
       <Link to='/register'>
-        <button className='btn submit light'>join?</button>
+        <btn className='btn submit light'>join?</btn>
       </Link>
     </div>
   );

@@ -4,7 +4,7 @@ import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import Self from '../feat/Self';
+import Self from '../self/Self';
 import Tool from '../feat/Tool';
 import Spinner from '../show/spin';
 

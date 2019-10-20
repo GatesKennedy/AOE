@@ -64,7 +64,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
         </div>
         <form className='form-auth center' onSubmit={e => onSubmit(e)}>
           <div className='column form-group'>
-            <div className='form-field'>
+            <div className='center form-field'>
               <input
                 name='username'
                 type='text'
@@ -74,7 +74,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
                 onChange={e => onChange(e)}
               />
             </div>
-            <div className='form-field'>
+            <div className='center form-field'>
               <input
                 name='email'
                 type='email'
@@ -84,7 +84,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
                 onChange={e => onChange(e)}
               />
             </div>
-            <div className='form-field'>
+            <div className='center form-field'>
               <input
                 name='password'
                 type='password'
@@ -94,7 +94,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
                 onChange={e => onChange(e)}
               />
             </div>
-            <div className='form-field'>
+            <div className='center form-field'>
               <input
                 name='pwConfirm'
                 type='password'
@@ -104,13 +104,15 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
                 onChange={e => onChange(e)}
               />
             </div>
-            <div className='center options'>
-              <input type='submit' value='go' className='btn submit light' />
+            <div className='options'>
+              <div className='center'>
+                <input type='submit' value='go' className='btn submit light' />
+              </div>
+              <Btn_Login />
             </div>
           </div>
         </form>
       </section>
-      <Btn_Login />
     </Fragment>
   );
 };
