@@ -36,9 +36,9 @@ const Login = ({ login, isAuthenticated }) => {
         <div className='greeting center'>
           <h2 className='msg center'>welcome back, Friend</h2>
         </div>
-        <form className='center' onSubmit={e => onSubmit(e)}>
-          <div className='column form-group'>
-            <div className='form-field'>
+        <form className='center options' onSubmit={e => onSubmit(e)}>
+          <div className='column form-group center'>
+            <div className='form-field center'>
               <input
                 name='username'
                 type='text'
@@ -48,7 +48,7 @@ const Login = ({ login, isAuthenticated }) => {
                 className='center input'
               />
             </div>
-            <div className='form-field'>
+            <div className='form-field center'>
               <input
                 name='password'
                 type='password'
@@ -58,13 +58,15 @@ const Login = ({ login, isAuthenticated }) => {
                 className='center input'
               />
             </div>
-            <div className='center options'>
-              <input type='submit' value='go' className='btn submit light' />
+            <div className='options'>
+              <div className='center'>
+                <input type='submit' value='go' className='btn submit light' />
+              </div>
+              <Btn_Register />
             </div>
           </div>
         </form>
       </section>
-      <Btn_Register />
     </Fragment>
   );
 };
