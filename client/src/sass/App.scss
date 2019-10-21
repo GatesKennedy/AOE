@@ -131,17 +131,35 @@ img {
 
 // ============
 // === dash ===
+
 .drop {
   margin-left: 0.4rem;
 }
-.group-name {
+.group-bottom {
+  height: 2px;
+  margin-left: 1rem;
+  background-color: $black-3;
+}
+.group-header {
   background-color: $black-3;
   color: $white-2;
+  width: 100%;
+  display: inline-flex;
   margin-bottom: 2px;
   padding-left: 1rem;
 }
-.app-grid {
+.group-body {
+  margin-left: 1rem;
   background-color: $white-3;
+}
+
+.header-title,
+.header-end {
+  width: 20vw;
+}
+
+.header-nav {
+  width: 60vw;
 }
 
 // =============

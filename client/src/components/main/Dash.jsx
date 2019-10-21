@@ -31,23 +31,20 @@ const Dash = ({ getCurrentProfile, auth: { user } }) => {
           type='button'
           className='group-name dash drop group'
         >
-          <h4>
-            <i className='fas fa-user white'></i>
-            {user && user.username}
-          </h4>
-          {displaySelf ? <NavProf /> : ''}
+          <div className='group-header'>
+            <div className='header-title'>
+              <div>
+                <i className='fas fa-user white'></i>
+                {user && user.username}
+              </div>
+            </div>
+            <div className='header-nav'>{displaySelf ? <NavProf /> : ''}</div>
+            <div className='header-end'>.:.</div>
+          </div>
         </div>
         {displaySelf && <Self />}
 
-        <div
-          onClick={() => toggleTool(!displayTool)}
-          type='button'
-          className='group-name dash drop group'
-        >
-          <h4>tool group</h4>
-        </div>
-        {displayTool && <Tool />}
-
+        <DropGroup />
         <DropGroup />
       </section>
     </Fragment>

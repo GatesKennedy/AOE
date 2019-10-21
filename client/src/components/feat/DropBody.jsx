@@ -4,9 +4,10 @@ import PropTypes from 'prop-types';
 const DropBody = props => {
   return (
     <Fragment>
-      <section class='dash group'>
-        <div class='app-grid'>oops.. there's nothing here yet.</div>
+      <section className='dash group'>
+        <div className='group-body'>oops.. there's nothing here yet.</div>
       </section>
+      <div className='group-bottom DropGroup'></div>
     </Fragment>
   );
 };

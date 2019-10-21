@@ -25,13 +25,13 @@ const Self = ({
 
   return loading && profile === null ? (
     <Fragment>
-      <section class='self group'>
+      <section class='self group-body group'>
         <Spinner />
       </section>
     </Fragment>
   ) : (
     <Fragment>
-      <section class='self group'>
+      <section class='self group group-body'>
         {profile !== null ? (
           <Profile profile={profile} user={user} />
         ) : (

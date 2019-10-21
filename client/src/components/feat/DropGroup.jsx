@@ -19,9 +19,12 @@ const DropGroup = ({ getCurrentProfile, auth: { user } }) => {
         <div
           onClick={() => toggleBody(!displayBody)}
           type='button'
-          className='group-name DropGroup drop group'
+          className='group-header DropGroup drop group'
         >
-          <h4>drop group</h4>
+          <h4>
+            <i className='fas fa-toolbox'></i>
+            drop group
+          </h4>
         </div>
         {displayBody && <DropBody />}
       </section>
