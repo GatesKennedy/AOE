@@ -8,6 +8,7 @@ import Tool from '../feat/Tool';
 import Spinner from '../show/spin';
 import NavProf from '../nav/NavProf';
 import NavMinor from '../nav/NavMinor';
+import DropGroup from '../feat/DropGroup';
 //import Profile from '../drop/Profile';
 
 const Dash = ({ getCurrentProfile, auth: { user } }) => {
@@ -46,6 +47,8 @@ const Dash = ({ getCurrentProfile, auth: { user } }) => {
           <h4>tool group</h4>
         </div>
         {displayTool && <Tool />}
+
+        <DropGroup />
       </section>
     </Fragment>
   );
