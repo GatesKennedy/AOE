@@ -22,3 +22,6 @@ export const THEY_ERROR = 'THEY_ERROR';
 //  Open
 export const OPEN_GET = 'OPEN_GET';
 export const OPEN_ERROR = 'OPEN_ERROR';
+//  Group
+export const GROUP_GET = 'GROUP_GET';
+export const GROUP_ERROR = 'GROUP_ERROR';

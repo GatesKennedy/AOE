@@ -2,6 +2,7 @@ import React, { Fragment, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getCurrentProfile } from '../../Rdx_actions/axn_profile';
+import { getGroupBody } from '../../Rdx_actions/axn_profile';
 
 import DropBody from './DropBody';
 
